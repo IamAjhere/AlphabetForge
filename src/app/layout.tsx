@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import NavigationBar from '@/components/nav-bar';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,7 +28,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavigationBar />
-          {children}
+          <main className='flex flex-col items-center justify-between p-12 sm:p-24'>
+            {children}
+          </main>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
